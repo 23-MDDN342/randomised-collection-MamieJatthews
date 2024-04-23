@@ -5,4 +5,6 @@
 
 >This starter code is just some simple faces being drawn. 
 
+Today I worked on the basic forms of the visual aspects of my code. I am focusing on designing my face and applying any elements and feautures of the face which in the future I want to randomize. I am begining to apply parameters to the shapes on the face and planning how I can use the variables to create interesting randoms. 
+
 
