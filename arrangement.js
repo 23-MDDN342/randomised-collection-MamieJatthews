@@ -33,6 +33,11 @@ function mouseClicked() {
   changeRandomSeed();
 }
 
+function frame (tilt_value){
+  rotate(tilt_value);
+  rect(-10, -20, 20, 40);
+}
+
 function draw () {
   if(millis() > lastSwapTime + millisPerSwap) {
     changeRandomSeed();
@@ -43,19 +48,19 @@ function draw () {
 
   // clear screen
   background(bg_color1);
-  noStroke();
+  //noStroke();
 
   // draw a 7x4 grid of faces
-  let w = canvasWidth / 7;
-  let h = canvasHeight / 4;
-  for(let i=0; i<4; i++) {
-    for(let j=0; j<7; j++) {
-      let y = h/2 + h*i;
+  let w = canvasWidth / 3;
+  let h = canvasHeight / 2;
+  for(let i=0; i<1; i++) {
+    for(let j=0; j<3; j++) {
+      let y = h;
       let x = w/2 + w*j;
      
         // center face
         let eye_value = int(random(2,4));
-        let tilt_value = random(-45, 45);
+        let tilt_value = random(-20, 20);
         let mouth_value = random(3,4);
         let is_cyclops = random(0, 100);
 
@@ -67,7 +72,10 @@ function draw () {
 
         push();
         translate(x, y);
-        scale(w/25, h/25);
+        scale(w/30, h/30);
+
+        frame(tilt_value);
+        //rect(-10, -20, 20, 40);
         
         orangeAlienFace(tilt_value, eye_value, mouth_value);
         pop();

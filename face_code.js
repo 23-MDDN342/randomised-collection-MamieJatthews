@@ -33,10 +33,10 @@ function orangeAlienFace(tilt_value, eye_value, mouth_value) {
   
   // rotation in degrees
   angleMode(DEGREES);
-  rotate(tilt_value);
+  rotate(tilt_value/10);
 
  // head
-  stroke(2)
+  strokeWeight(.2);
 
   //head
   fill(fg_color3);
@@ -50,8 +50,19 @@ function orangeAlienFace(tilt_value, eye_value, mouth_value) {
   fill(0, 0, 100, 100);
   rect(-4, -3, 8, 10);
 
-  fill(100, 0, 0);
-  triangle(-6, 7, -5, 3, -1, 4)
+  //mouthFunction
+  push()
+
+  rotate(tilt_value*2);
+  //lipBottom
+  fill(100, 0, 100)
+  ellipse(0, 4, 5, 2);
+
+  //lipTop
+  fill(100, 0, 150);
+  triangle(0, 2, 3, 4, -3, 4);
+
+  pop();
 
   //nose
   fill(100, 0, 0, 255);
