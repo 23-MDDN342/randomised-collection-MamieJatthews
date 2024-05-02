@@ -36,6 +36,11 @@ function mouseClicked() {
 function frame (tilt_value){
   push();
   rotate(tilt_value);
+  push()
+  fill(92, 60, 31);
+  noStroke();
+  rect(-8, -18, 20, 40);
+  pop()
   rect(-10, -20, 20, 40);
   fill(240);
   noStroke();
@@ -43,6 +48,7 @@ function frame (tilt_value){
   quad (-9.5, -4, -9.5, -5, -1, -19.5, -.5, -19.5);
   pop();
 }
+
 
 function draw () {
   if(millis() > lastSwapTime + millisPerSwap) {
