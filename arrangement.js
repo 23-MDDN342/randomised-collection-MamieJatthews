@@ -9,7 +9,7 @@ let lastSwapTime = 0;
 const millisPerSwap = 3000;
 
 // global variables for colors
-const bg_color1 = [71, 222, 219];
+const bg_color1 = [156, 102, 53];
 
 function setup () {
   // create the drawing canvas, save the canvas element
@@ -34,8 +34,14 @@ function mouseClicked() {
 }
 
 function frame (tilt_value){
+  push();
   rotate(tilt_value);
   rect(-10, -20, 20, 40);
+  fill(240);
+  noStroke();
+  quad (-9.5, 0, -9.5, -3, 0, -19.5, 2, -19.5);
+  quad (-9.5, -4, -9.5, -5, -1, -19.5, -.5, -19.5);
+  pop();
 }
 
 function draw () {
@@ -60,15 +66,18 @@ function draw () {
      
         // center face
         let eye_value = int(random(2,4));
-        let tilt_value = random(-20, 20);
+        let tilt_value = random(-10, 10);
         let mouth_value = random(3,4);
         let is_cyclops = random(0, 100);
-
-        if(is_cyclops < 10) {
-          eye_value = 1;
-          tilt_value = random(-5, 5);
-          mouth_value = random(0, 1.7);
-        }
+        let noseLeftPoint = random(-4,0 );
+        let noseRightPoint = random(0, 4);
+        let eyeRotL = random(0, 360);
+        let eyeRotR = random(0, 360);
+        let red = random(100, 200);
+        let green = random(100,200);
+        let blue = random(100, 200);
+        let Hsize = random(8, 12);
+        let numberOfEyes = random(['1', '2', '3', '4']);
 
         push();
         translate(x, y);
@@ -77,7 +86,7 @@ function draw () {
         frame(tilt_value);
         //rect(-10, -20, 20, 40);
         
-        orangeAlienFace(tilt_value, eye_value, mouth_value);
+        blockHead(tilt_value, Hsize, noseLeftPoint, noseRightPoint, eyeRotL, eyeRotR, red, green, blue, numberOfEyes);
         pop();
       
     }

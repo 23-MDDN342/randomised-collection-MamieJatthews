@@ -54,18 +54,38 @@ function draw () {
       if (i == 0) {
         // center face
         let eye_value = 2;
-        let tilt_value = random(-45, 45);
+        let tilt_value = random(-30, 30);
         let mouth_value = random(1, 3);
+
+        
+        let headSize = 10;
+        let centerX = 0;
+        let eyeRightX = 3;
+        let eyeRightY = -4.5;
+        let eyeRightHeight = 4;
+        let eyeRightWidth = 2;
+
+        let eyeLeftX = -3;
+        let eyeLeftY = -4;
+        let eyeLeftHeight = 3.5;
+        let eyeLeftWidth = 2;
+
+        let nostrilLeftX = random(-4, );
+        let nostrilLeftY = 2;
+        let nostrilRightX = 2;
+        let nostrilRightY = 2;
+
         let is_cyclops = random(0, 100);
         if(is_cyclops < 10) {
           eye_value = 1;
           tilt_value = random(-5, 5);
           mouth_value = random(5, 10);
+          
         }
         push();
         translate(x, y);
         scale(w/25, h/25);
-        orangeAlienFace(tilt_value, eye_value, mouth_value);
+        blockHead(tilt_value, eye_value, mouth_value);
         pop();
       }
       else if (i > 0) {
